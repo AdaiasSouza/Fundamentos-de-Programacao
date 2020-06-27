@@ -1,2 +1,2 @@
 # Python
-Script Python
+Script Python de treinamento
