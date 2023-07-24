@@ -1,30 +1,52 @@
-#======= Media ===============#
-import random as ra
+def media_notas(n1, n2, n3):
+    return (n1+n2+n3)/3
 
-def media(x): return (sum(x)/len(x))
+def media_final(media_notas, prova_final):
+    nota_final = (media_notas + prova_final)/2
+    return nota_final  
+
+def status_aluno(media):
+    if media >= 5:
+        return "Aprovado"
+    # elif media >= 4 and media < 7:
+    #     return "Prova final"
+    else:
+        return "Reprovado"
+
+def main():
+
+    qtd_alunos = int(input("Quantidade de alunos: "))
+    contador = 0    
+
+    while contador < qtd_alunos:
+
+        print("Aluno: ", contador + 1)
+        nota_um = float(input("Inforne nota 1: "))
+        nota_dois = float(input("Inforne nota 2: "))
+        nota_tres = float(input("Inforne nota 3: "))
+
+        media_calculada = media_notas(nota_um, nota_dois, nota_tres)
 
 
-pontuacao = []
-# Popular lista com valores interos aleatorios
-for value in range(0,100,1):
-    pontuacao.append(ra.randrange(1,10))
+        if media_calculada >= 7:            
+            print("Media: ", media_calculada, status_aluno(media_calculada)) 
+            alunos_aprovados.append(media_calculada)
+
+        elif media_calculada >= 4 and media_calculada < 7:
+            nota_final = float(input("nota final: "))            
+            media_fina = media_final(media_calculada, nota_final)
+            print("Media: ", media_fina, status_aluno(media_fina))
 
 
-pont_dow = []
-pont_up = []
+        else:
+            print("Media: ", media_calculada, "Situacao: ",status_aluno(media_calculada))             
 
-media_vlr = media(pontuacao)
-
-# Classificacao de valores
-for row in range(0,len(pontuacao),1):
-    if pontuacao[row] < media_vlr: pont_dow.append(pontuacao[row])
-    
-    else: pont_up.append(pontuacao[row])        
+        contador += 1
+        print("\n")
 
 
-print("Valores: ",pontuacao,"\n\nMedia: ",media(pontuacao),
-      "\n\nAbaixo media: ",pont_dow,"\n\nAcima media: ",pont_up)
-
+if __name__ == '__main__':
+    main()
 
 
 
