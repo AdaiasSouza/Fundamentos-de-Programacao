@@ -5,7 +5,7 @@ def media(x): return (sum(x)/len(x))
 
 
 pontuacao = []
-# Popular lista com valors interos aleatorios
+# Popular lista com valores interos aleatorios
 for value in range(0,100,1):
     pontuacao.append(ra.randrange(1,10))
 
